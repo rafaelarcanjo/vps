@@ -1,0 +1,8 @@
+#!/bin/bash
+docker container run -d \
+	-p 53:53 \
+	-p 53:53/udp \
+	-v /var/log/:/var/log/ \
+	--name alpinedns \
+	--restart always \
+	rafaelarcanjo/vps:alpinedns 

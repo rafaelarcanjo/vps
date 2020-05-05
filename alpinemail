@@ -1,0 +1,8 @@
+#!/bin/bash
+docker container run -d \
+	-p 25:25 -p 465:465 -p 993:993 -p 995:995 \
+	-v /var/vmail/:/var/vmail/ \
+	-v /var/log/:/var/log/ \
+	--name alpinemail \
+	--restart always \
+	rafaelarcanjo/vps:alpinemail 
